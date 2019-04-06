@@ -1,22 +1,28 @@
 n=int(input())
 l=[]
 for i in range(0,n):
-    t=str(input())
-    l.append(t)
-le=len(l)
+    l.append(str(input()))
+
 a=[]
-for i in range(0,le):
-    a.append(len(l[i]))
-ma=max(a)
+
+l.sort()
+
+ma=len(l[0])
+
+res=[]
+
 for i in range(0,ma):
     te=l[0][i]
-    try:
-        for j in range(1,le):
-            if(l[j][i]==te):
-                te=te
-            else:
-                exit()
-    except:
-        no=i
-        print(l[0][:no])
-        exit()
+    c=0
+    for j in range(1,n):
+        if(l[j][i]==te):
+            c+=1
+        else:
+            break
+    if(c>=1):
+        res.append(te)
+    if(c==0):
+        break
+if(len(res)==0):
+    exit()
+print(*res,sep='')

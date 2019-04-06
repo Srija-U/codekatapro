@@ -6,7 +6,6 @@ for i in range(0,n):
 a=[]
 
 l.sort(key=len)
-print(l)
 ma=len(l[0])
 
 res=[]
